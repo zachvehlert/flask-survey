@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ session['cur_survey_title'] }} {% endblock %}
+
+{% block content %}
+    <form action="/update-q", method="get">
+        <h2>{{ session['instructions'] }}</h2>
+        <p>{{ session['questions'][(session['cur_question'])]['question'] }}</p>
+        {% for option in session['questions'][(session['cur_question'])]['choices'] %}
+            <input type="radio" name="{{ option }}">
+            <label for={{ option }}>{{ option }}</label>
+        {% endfor %}
+        {% if session['text_allowed'] %}
+            <input type="text" name="text_input">
+        {% endif %}
+        <button type="submit">SUBMIT</button>
+    </form>
+{% endblock %}

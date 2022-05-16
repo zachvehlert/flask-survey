@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ 'SURVEY LIST' }}{% endblock %}
+
+{% block content %}
+    <h2>Select a survey to begin</h2>
+    {% for survey in session['survey_titles'] %}
+        <div class='survey-button' id="{{ survey }}">
+            <h3>{{ survey + ' survey' }}</h3>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='homepage.js') }}"></script>
+{% endblock %}

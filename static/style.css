@@ -1,0 +1,12 @@
+.survey-button {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.survey-button:hover {
+    background-color: black;
+    color: white;
+}
